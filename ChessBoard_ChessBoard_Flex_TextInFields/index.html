@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">	
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Simple XHTMl Document</title>
+		<link href="./assets/CSS/styles.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			*{
+				box-sizing:border-box;
+				margin:0;
+				padding:0;
+			}
+			.ExtContainer{
+				border-radius:10px;
+				background-color: beige; 
+				position: relative;  
+				font-size: 0;
+				/*display:inline-block;*/
+                width:482px; /*why not 450? But if set less - ne works!*/
+                height:482px;
+                display:flex;
+                flex-direction:column;
+                /*justify-content:center;*/
+            }
+            .HorContainer{
+                display:flex;
+                flex-direction: row;
+            }
+			.BoardItself{
+				/*font-size: 0px;*//*yes, works, as in lection! In fields - ne works*/
+				width: 510px; /*why so? Less ne works! And it is greater than 482 un ext-container! Ma ne works even 488!*/
+                height: 410px;
+				/*margin: 0 50px;*//*padding 5 px - no, err, deform'tc, margin s'not ob VertHdr nu ha pos abs, so ne in flow, so board abloc'tc ad left edge, covering l'vertHdr*/
+                display:flex;
+                /*tbi vrns abls of fl-dir*/
+                flex-direction: row; /*ob mab it inherits flex-direction column*/
+                /*flex-direction: column;*/
+                flex-wrap:nowrap; /*so all boxes in 1 line, ma ne keep width*/
+                flex-wrap:wrap;/*so all boxes keep width ma in 1 column!*/
+                justify-content:flex-start;
+                border-style: solid; /*ridge;*/
+				border-width: 5px;
+				border-color: brown;
+			}
+			.BlackField, .WhiteField{
+				
+				width: 50px;
+				height:50px;
+				margin: 0px; /*ne works*/
+				padding: 0px; /*ne works*/
+				border-width: 0px; /*ne works*/
+				/*font-size: 0px;*//*ne works, though in lection worked*/
+                font-size:14pt;
+                /*margin:auto;*/
+                /*padding: auto;*/
+                padding:15px;
+			}
+			.BlackField{
+				background-color:brown;
+                color:beige;
+                /*color:black;*/
+			}
+			.WhiteField{
+				/*display:hidden;*/
+                /*display:none;*/
+                /*visibility: hidden;*//*works - vrn 1*/
+				/*opacity:0%;*/ /*works - vrn 2*/
+				background-color: beige; /*works - vrn 0*/
+				/*background-color: yellowgreen;*/
+				color:brown;
+				
+			}
+            .HorHeader, .VertHeader{
+                color:brown;
+                font-size: 12pt;
+                
+            }
+			.HorHeader{
+				height:50px;
+                height:20px;
+                height:40px;
+                padding:7px 0;
+                margin:0 60px;/*why 60 not less than 50 - by font width?*/
+                display:flex;
+                /*fl-dir: row; - dflt*/
+				/*justify-content:center;*/
+				justify-content:space-between;
+                
+			}
+			.VertHeader{
+				display:flex;
+                flex-direction: column-reverse;
+                justify-content:space-around;
+				width:20px;
+                margin:0 10px;
+			}
+			.Letter, .Number{
+                font-size: 14pt;
+            }
+			
+			
+			body{
+				background-color: brown;
+			}
+
+			.SeparateField{
+				position:relative;
+				top: 20px;
+				left:20px;
+				transform-origin: 25px, 25px;
+				transform: rotate(30deg);}
+		</style>
+    </head>
+    <body>
+		<div class="ExtContainer"> 
+           <div class="HorHeader">
+			  <p class="Letter">a</p>
+			  <p class="Letter">b</p>
+			  <p class="Letter">c</p>
+			  <p class="Letter">d</p>
+			  <p class="Letter">e</p>
+			  <p class="Letter">f</p>
+			  <p class="Letter">g</p>
+			  <p class="Letter">h</p>
+		  </div>
+		  <div class="HorContainer">  
+			<div class="VertHeader">
+			    <p class="Number">1</p>
+			    <p class="Number">2</p>
+				<p class="Number">3</p>
+				<p class="Number">4</p>
+				<p class="Number">5</p>
+				<p class="Number">6</p>
+				<p class="Number">7</p>
+				<p class="Number">8</p>
+			</div>
+			<div class="BoardItself">
+				<div class="WhiteField">a8</div>
+				<div class="BlackField">b8</div>
+				<div class="WhiteField">c8</div>
+				<div class="BlackField">d8</div>
+				<div class="WhiteField">e8</div>
+				<div class="BlackField">f8</div>
+				<div class="WhiteField">g8</div>
+				<div class="BlackField">h8</div>
+				
+				<div class="BlackField">a7</div>
+				<div class="WhiteField">b7</div>
+				<div class="BlackField">c7</div>
+				<div class="WhiteField">d7</div>
+				<div class="BlackField">e7</div>
+				<div class="WhiteField">f7</div>
+				<div class="BlackField">g7</div>
+				<div class="WhiteField">h7</div>
+				
+				<div class="WhiteField">a6</div>
+				<div class="BlackField">b6</div>
+				<div class="WhiteField">c6</div>
+				<div class="BlackField">d6</div>
+				<div class="WhiteField">e6</div>
+				<div class="BlackField">f6</div>
+				<div class="WhiteField">g6</div>
+				<div class="BlackField">h6</div>
+				
+				<div class="BlackField">a5</div>
+				<div class="WhiteField">b5</div>
+				<div class="BlackField">c5</div>
+				<div class="WhiteField">d5</div>
+				<div class="BlackField">e5</div>
+				<div class="WhiteField">f5</div>
+				<div class="BlackField">g5</div>
+				<div class="WhiteField">h5</div>
+				
+				<div class="WhiteField">a4</div>
+				<div class="BlackField">b4</div>
+				<div class="WhiteField">c4</div>
+				<div class="BlackField SeparateField">d4</div>
+				<div class="WhiteField">e4</div>
+				<div class="BlackField">f4</div>
+				<div class="WhiteField SeparateField">g4</div>
+				<div class="BlackField">h4</div>
+				
+				<div class="BlackField">a3</div>
+				<div class="WhiteField">b3</div>
+				<div class="BlackField">c3</div>
+				<div class="WhiteField">d3</div>
+				<div class="BlackField">e3</div>
+				<div class="WhiteField">f3</div>
+				<div class="BlackField">g3</div>
+				<div class="WhiteField">h3</div>
+				
+				<div class="WhiteField">a2</div>
+				<div class="BlackField">b2</div>
+				<div class="WhiteField">c2</div>
+				<div class="BlackField">d2</div>
+				<div class="WhiteField">e2</div>
+				<div class="BlackField">f2</div>
+				<div class="WhiteField">g2</div>
+				<div class="BlackField">h2</div>
+				
+				<div class="BlackField">a1</div>
+				<div class="WhiteField">b1</div>
+				<div class="BlackField">c1</div>
+				<div class="WhiteField">b1</div>
+				<div class="BlackField">e1</div>
+				<div class="WhiteField">f1</div>
+				<div class="BlackField">g1</div>
+				<div class="WhiteField">h1</div>
+			</div><!-- board -->
+			<div class="VertHeader">
+			    <p class="Number">1</p>
+			    <p class="Number">2</p>
+				<p class="Number">3</p>
+				<p class="Number">4</p>
+				<p class="Number">5</p>
+				<p class="Number">6</p>
+				<p class="Number">7</p>
+				<p class="Number">8</p>
+		    </div>
+		  </div>  <!--HorContainer -->
+		  <div class="HorHeader">
+			  <p class="Letter">a</p>
+			  <p class="Letter">b</p>
+			  <p class="Letter">c</p>
+			  <p class="Letter">d</p>
+			  <p class="Letter">e</p>
+			  <p class="Letter">f</p>
+			  <p class="Letter">g</p>
+			  <p class="Letter">h</p>
+		  </div>
+		</div> <!--ExtContainer -->
+		
+	</body>
+</html>

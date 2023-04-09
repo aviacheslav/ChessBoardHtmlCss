@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">	
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Simple XHTMl Document</title>
+		<link href="./assets/CSS/styles.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			.ExtContainer{
+				border-radius:10px;
+				background-color: beige; 
+				width: 520px;/*  8*50 + +5*2 + 7*2 + 2*2*14 */ /*=480*/
+				width: 485px;/*for font-size 0*/
+				height:540px; /*for no font-size 0*/
+				height:505px;/*for font-size 0 it is less*/
+				height:485px;
+				position: relative;  /*does not help*/
+			}
+			.BoardItself{
+				display: inline-block;
+				border-style: solid; /*ridge;*/
+				border-width: 5px;
+				border-color: brown;
+				font-size: 0px;/*yes, works, as in lection! In fields - ne works*/
+				width: 400px;
+			}
+			.HorContainer{
+				height:410px; /*410, 420 - no matter*/
+				display: inline-block;
+
+			}
+			.BlackField, .WhiteField{
+				display: inline-block;
+				width: 50px;
+				height:50px;
+				margin: 0px; /*ne works*/
+				padding: 0px; /*ne works*/
+				border-width: 0px; /*ne works*/
+				/*border-radius: 10px;*/
+				/*if to do so, seen distances between fields
+				width = border around board = 5px*/
+				font-size: 0px;/*ne works, though in lection worked*/
+			}
+			.BlackField{
+				background-color:brown;
+				/*border-radius:45%;*/
+			}
+			.WhiteField{
+				display:hidden;
+				background-color: beige; /*works - vrn 0*/
+				background-color: yellowgreen;
+				/*display:none;*/
+				visibility: hidden;/*works - vrn 1*/
+				/*opacity:0%;*/ /*works - vrn 2*/
+			}
+			
+			.HorHeader{
+				color:brown;
+				padding-left:13px;
+				/*margin do same, no diff*/
+			}
+			.VertHeader{
+				display: inline-block;
+				color:brown;
+				position: relative;
+				bottom: 18px; 
+				
+			}
+			.FullLine{
+				color:black;
+			}
+			.Letter{
+				display: inline-block;
+				margin-left: 43px;
+				margin-left: 40px;/*for font-size 0*/
+				margin-top:8px;
+				margin-bottom:8px;
+			}
+			.Number{
+				/*margin-top:40px;*/ /*doesn't work*/
+				/*margin-bottom:40px;*/  /*works well*/
+				/*padding-bottom:25px;*/
+				 /*works strange: 1 remains on hor line, ma 
+				 HorHeader below goes >ud, 
+				 it is pushed off,  but  it is padding, not margin!*/
+				/*padding-bottom:18px;*/
+				/*so or anso msb, not 40, ma less, ob 1 s'on hor line, so notl padding-bottom. 
+				Ma S ne works, or >ju, work't strange*/
+				/*margin-bottom:40px;*/  /*not what I want, ma what I do for it works strange*/
+				/*margin-bottom:35px;
+				margin-bottom:0px;*/
+				/* margin-bottom:17px; */  /* does nothing! Why?*/
+				padding-bottom:17px; /*  this moves lower header or board  down! Why?*/
+				margin-left:12px;
+				margin-right:12px;
+				/*transform:rotate(-45deg);*/ /*ce dels hor paddings*/
+				/*background-color: yellowgreen;
+				border-width:1px;
+				border-color:blue;*/
+			}
+			body{
+				background-color: brown;
+			}
+
+			.SeparateField{
+				position:relative;
+				top: 20px;
+				left:20px/*no ; et ShutBracket et work!*/;
+				transform-origin:25px, 25px;
+				transform:rotate(30deg)
+
+		</style>
+    </head>
+    <body>
+		<div class="ExtContainer">
+		  <div class="HorHeader">
+			  <p class="Letter">a</p>
+			  <p class="Letter">b</p>
+			  <p class="Letter">c</p>
+			  <p class="Letter">d</p>
+			  <p class="Letter">e</p>
+			  <p class="Letter">f</p>
+			  <p class="Letter">g</p>
+			  <p class="Letter">h</p>
+		  </div>
+		   <div class="HorContainer"> 	
+			<div class="VertHeader">
+			    <p class="Number">8</p>
+			    <p class="Number">7</p>
+				<p class="Number">6</p>
+				<p class="Number">5</p>
+				<p class="Number">4</p>
+				<p class="Number">3</p>
+				<p class="Number">2</p>
+				<p class="Number">1</p>
+			</div>
+			<div class="BoardItself">
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<!-- <div class="BlackField" style="position:relative; top: 20px; left:20px"></div> -->
+				<div class="BlackField SeparateField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField SeparateField"></div>
+				<div class="BlackField"></div>
+				
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<!-- <div class="BlackField" style="padding-bottom: 20px"></div>  -->
+				<!-- <div class="BlackField" style="margin: 20px"></div> -->
+				<!-- <div class="BlackField" style="position:relative; top: 20px; left:20px"></div> -->
+				<div class="WhiteField"></div>
+				<div class="BlackField"></div>
+				<div class="WhiteField"></div>
+			</div><!-- board -->
+			<div class="VertHeader">
+			    <p class="Number">8</p>
+			    <p class="Number">7</p>
+			    <p class="Number">6</p>
+			    <p class="Number">5</p>
+			    <p class="Number">4</p>
+			    <p class="Number">3</p>
+			    <p class="Number">2</p>
+			    <p class="Number">1</p>
+		    </div>
+		   </div> <!-- HorContainer -->
+		  <div class="HorHeader">
+			  <p class="Letter">a</p>
+			  <p class="Letter">b</p>
+			  <p class="Letter">c</p>
+			  <p class="Letter">d</p>
+			  <p class="Letter">e</p>
+			  <p class="Letter">f</p>
+			  <p class="Letter">g</p>
+			  <p class="Letter">h</p>
+		  </div>
+		</div>
+		
+	</body>
+</html>
